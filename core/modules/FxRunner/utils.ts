@@ -61,7 +61,7 @@ export const getMutableConvars = (isCmdLine = false) => {
             ? txConfig.whitelist.rejectionMessage.replaceAll('\n', '\\n')
             : txConfig.whitelist.rejectionMessage;
         convars.push(['sets', 'sv_allowlistInstructions', instructions]);
-    } else {
+    } else if (!isCmdLine) {
         convars.push(['sets', 'sv_allowlistInstructions', '']);
     }
 
